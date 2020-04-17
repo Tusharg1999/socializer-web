@@ -1,0 +1,76 @@
+@import "../Colors";
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,section{
+  height:100%;
+}
+.container{
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.main{
+  height: 100%;
+  @include flex(row);
+}
+.form-div{
+  flex: 2;
+  @include flex(column);
+  align-items: center;
+  justify-content: center;
+  h1{
+    position: relative;
+    bottom:30%;
+    font-family: "Roboto Black", monospace;
+    color: $primary;
+    word-spacing: .1rem;
+    font-weight: normal;
+    font-size: 50px;
+  }
+  label {
+    margin-bottom: 50px;
+    position:relative;
+    display:inline-block;
+  }
+  span {
+    padding:10px;
+    font-size: 25px;
+    pointer-events: none;
+    position:absolute;
+    left:0;
+    top:10px;
+    transition: 0.5s;
+    opacity:0.5;
+  }
+
+  input {
+    height: 70px;
+    outline: none;
+    border-radius: 10px;
+    border: $primary 2px solid;
+    color: black;
+    font-size: 18px;
+    width: 500px;
+    padding:10px;
+  }
+  input:focus + span, input:not(:placeholder-shown) + span {
+    opacity:1;
+    color: $primary;
+    transform: scale(0.75) translateY(-120%) translateX(-35px);
+  }
+
+  /* For IE Browsers*/
+  input:focus + span, input:not(:-ms-input-placeholder) + span {
+    opacity:1;
+    transform: scale(0.75) translateY(-120%) translateX(-30px);
+  }
+}
+.design-div{
+  flex: 1;
+}

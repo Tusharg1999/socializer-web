@@ -1,0 +1,8 @@
+$primary: #27CD83;
+$seconday: rgba(181, 226, 250, 1);
+$primary2: rgba(237, 222, 164, 1);
+$seconday2: rgba(247, 160, 114, 1);
+@mixin flex($direction){
+  display: flex;
+  flex-direction: $direction;
+}
